@@ -9,4 +9,4 @@ function checkLatestCommit() {
     })
 }
 
-checkLatestCommit();
+setInterval(checkLatestCommit, 5000);
