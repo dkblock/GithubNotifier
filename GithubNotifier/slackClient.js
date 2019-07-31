@@ -7,8 +7,13 @@ export default function sendMessage(message) {
         method: 'post',
         body: JSON.stringify({
             channel: channel,
-            text: message,
-            as_user: true
+            blocks: [ 
+                message,
+                {
+                    "type": "divider"
+                } 
+            ],
+            as_user: true,
         }),
         headers: { 
             'Content-Type': 'application/json',

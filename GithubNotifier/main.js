@@ -1,10 +1,10 @@
 import getLatestCommit from './githubClient';
 import sendMessage from './slackClient';
-import processMessage from './slackWorker';
+import composeMessage from './slackWorker';
 
 function checkLatestCommit() {
     getLatestCommit().then((data) => {
-        const message = processMessage(data); 
+        const message = composeMessage(data); 
         sendMessage(message);
     })
 }
