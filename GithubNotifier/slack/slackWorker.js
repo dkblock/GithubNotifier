@@ -1,4 +1,4 @@
-const nconf = require('nconf');
+import nconf from 'nconf';
 nconf.env().argv().file('./config.json');
 
 export default function composeMessage(data) {
