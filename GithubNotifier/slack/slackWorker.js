@@ -1,5 +1,5 @@
 const nconf = require('nconf');
-nconf.env().argv().file('./config/config.json');
+nconf.env().argv().file('./config.json');
 
 export default function composeMessage(data) {
     const repository = nconf.get("github:repository");

@@ -1,5 +1,5 @@
 const nconf = require('nconf');
-nconf.env().argv().file('./config/config.json');
+nconf.env().argv().file('./config.json');
 
 export default function sendMessage(message) {
     const token = nconf.get('slack:token');
