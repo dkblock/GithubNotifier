@@ -1,10 +1,13 @@
+const nconf = require('nconf');
+nconf.env().argv().file('./config/config.json');
+
 export default function composeMessage(data) {
-    const repo = process.env.GIT_REPO;
+    const repository = nconf.get("github:repository");
     const message = {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": `*New commit in repository ${repo}* :wink:\n>Committer: ${data.committer.login}\n>Message: '${data.commit.message}'\n`
+                    "text": `*New commit in repository ${repository}* :wink:\n>Committer: ${data.committer.login}\n>Message: '${data.commit.message}'\n`
                 },
                 "accessory": {
                     "type": "button",

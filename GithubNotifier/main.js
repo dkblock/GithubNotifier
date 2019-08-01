@@ -1,6 +1,8 @@
-import getLatestCommit from './githubClient';
-import sendMessage from './slackClient';
-import composeMessage from './slackWorker';
+import getLatestCommit from './github/githubClient';
+import sendMessage from './slack/slackClient';
+import composeMessage from './slack/slackWorker';
+
+setInterval(checkLatestCommit, 5000);
 
 function checkLatestCommit() {
     getLatestCommit().then((data) => {
@@ -8,5 +10,3 @@ function checkLatestCommit() {
         sendMessage(message);
     })
 }
-
-setInterval(checkLatestCommit, 5000);
