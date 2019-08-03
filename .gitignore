@@ -61,4 +61,4 @@ typings/
 .next
 
 # config.json for GithubNotifier
-/config.json
+config.json
