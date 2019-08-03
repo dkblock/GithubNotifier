@@ -1,7 +1,8 @@
 import nconf from 'nconf';
-nconf.env().argv().file('./config.json');
 
 export default function sendMessage(message) {
+    nconf.env().argv().file('./config.json');
+    
     const token = nconf.get('slack:token');
     const channel = nconf.get('slack:channel');
     const url = `https://slack.com/api/chat.postMessage`;

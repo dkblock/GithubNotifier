@@ -1,0 +1,10 @@
+{
+    "github": {
+        "user": "dkblock",
+        "repository": "GithubNotifier"
+    },
+    "slack": {
+        "token": "xoxb-699769002945-696024412450-6cy1OaS1RuqzwHfQXF8H4Xgx",
+        "channel": "CLRJUCP0U"
+    }
+}

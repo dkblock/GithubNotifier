@@ -1,7 +1,8 @@
 import nconf from 'nconf';
-nconf.env().argv().file('./config.json');
 
 export default function composeMessage(data) {
+    nconf.env().argv().file('./config.json');
+    
     const repository = nconf.get("github:repository");
     const message = {
                 "type": "section",
