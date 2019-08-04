@@ -1,8 +1,10 @@
 import nconf from 'nconf';
+import composeMessage from './slackWorker';
 
-export default function sendMessage(message) {
+export default function sendMessage(data) {
     nconf.env().argv().file('./config.json');
     
+    const message = composeMessage(data); 
     const token = nconf.get('slack:token');
     const channel = nconf.get('slack:channel');
     const url = `https://slack.com/api/chat.postMessage`;
