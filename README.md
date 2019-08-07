@@ -1,7 +1,7 @@
 # GithubNotifier
 
 ### Prepare for using
-You need to create **config.json** file in **GithubNotifier** folder with the following settings:
+You need to create **config.json** file in **GithubNotifier/config** folder with the following settings:
 
 **github:user** - user whose repository will be checked  
 **github:repository** - repository to check the latest commit  
