@@ -1,14 +1,4 @@
-import getLatestCommit from './github/githubClient';
-import {isLatestPushedCommitNew, saveLatestCommit} from './github/githubWorker';
-import sendMessage from './slack/slackClient';
+import checkLatestCommit from './commitChecker';
+import {config} from './config/config';
 
-setInterval(checkLatestCommit, 5000);
-
-function checkLatestCommit() {
-    getLatestCommit().then((data) => {
-        if(isLatestPushedCommitNew(data)) {           
-            sendMessage(data);
-            saveLatestCommit(data);
-        }
-    })
-}
+setInterval(checkLatestCommit, config.interval);

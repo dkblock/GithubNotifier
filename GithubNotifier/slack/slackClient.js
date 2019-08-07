@@ -1,29 +1,28 @@
-import nconf from 'nconf';
-import composeMessage from './slackWorker';
+import {config} from '../config/config';
+import composeMessage from './messageBuilder';
 
-export default function sendMessage(data) {
-    nconf.env().argv().file('./config.json');
-    
-    const message = composeMessage(data); 
-    const token = nconf.get('slack:token');
-    const channel = nconf.get('slack:channel');
+export default function sendMessage(commit) {    
+    const message = composeMessage(commit); 
+    const token = config.slack.token;
+    const channel = config.slack.channel;
     const url = `https://slack.com/api/chat.postMessage`;
+    const data = {
+        channel: channel,
+        blocks: [ 
+            message,
+            {
+                "type": "divider"
+            } 
+        ],
+        as_user: true,
+    };
     
     fetch(url, {
         method: 'post',
-        body: JSON.stringify({
-            channel: channel,
-            blocks: [ 
-                message,
-                {
-                    "type": "divider"
-                } 
-            ],
-            as_user: true,
-        }),
+        body: JSON.stringify(data),
         headers: { 
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
-         },
+         }
     });
 }
