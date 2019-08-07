@@ -9,7 +9,7 @@ You need to create **config.json** file in **GithubNotifier** folder with the fo
 **slack:channel** - сhannel where notifications will be sent
 
 For example:
-```javascript
+```json
 {
     "github": {
         "user": "dkblock",
