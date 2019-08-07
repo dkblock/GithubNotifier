@@ -1,3 +1,4 @@
+```json
 {
     "github": {
         "user": "dkblock",
@@ -8,3 +9,4 @@
         "channel": "CLRKPCL0U"
     }
 }
+```
