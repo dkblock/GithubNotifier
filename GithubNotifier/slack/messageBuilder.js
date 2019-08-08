@@ -1,12 +1,9 @@
-import {config} from '../config/config';
-
-export default function composeMessage(data) {    
-    const repository = config.github.repository;
+export default function composeMessage(commit, repository) {    
     const message = {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": `*New commit in repository ${repository}* :wink:\n>Committer: ${data.committer.login}\n>Message: '${data.commit.message}'\n`
+                    "text": `*New commit in repository ${repository}* :wink:\n>Committer: ${commit.committer.login}\n>Message: '${commit.commit.message}'\n`
                 },
                 "accessory": {
                     "type": "button",
@@ -14,7 +11,7 @@ export default function composeMessage(data) {
                         "type": "plain_text",
                         "text": "GET IT",
                     },
-                    "url": `${data.html_url}`,
+                    "url": `${commit.html_url}`,
                     "style": "primary"
                 }
     }    

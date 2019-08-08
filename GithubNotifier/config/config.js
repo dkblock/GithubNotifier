@@ -4,11 +4,11 @@ nconf.env().argv().file('./config/config.json');
 export const config = {
     github: {
         user: nconf.get('github:user'),
-        repository: nconf.get('github:repository')
+        repositories: nconf.get('github:repositories'),   
     },
     slack: {
         token: nconf.get('slack:token'),
         channel: nconf.get('slack:channel')
     },
-    interval : 10000
+    interval: 15000
 }

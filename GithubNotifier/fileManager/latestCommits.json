@@ -1,10 +1,19 @@
 {
   "dkblock": {
     "GithubNotifier": {
-      "latestCommit": "ce984d9919117872e2d3a89ccb39c3b459a02fab"
+      "latestCommit": "a1b4a33a0af17150cbd6662fb7233c73a749016b"
     },
     "Personal": {
-      "latestCommit": "0fcf68143b9f4a4e8f0c55f2f12039cfc05ecb09"
+      "latestCommit": "6206aa0252391b512e2a401a78e8b731a184b847"
+    },
+    "TreesComparer": {
+      "latestCommit": "779534aa56b03904256da70217b0146c58164b08"
+    },
+    "YarTransport": {
+      "latestCommit": "80ff2c6a6f4f8fb3aa95456f1b227201250e75ff"
+    },
+    "Confirmit2019": {
+      "latestCommit": "ef552128799368cdeacade22e2808dcae8ee8db7"
     }
   }
 }

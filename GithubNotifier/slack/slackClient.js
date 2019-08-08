@@ -1,8 +1,8 @@
 import {config} from '../config/config';
 import composeMessage from './messageBuilder';
 
-export default function sendMessage(commit) {    
-    const message = composeMessage(commit); 
+export default function sendMessage(commit, repository) {    
+    const message = composeMessage(commit, repository); 
     const token = config.slack.token;
     const channel = config.slack.channel;
     const url = `https://slack.com/api/chat.postMessage`;
@@ -14,7 +14,7 @@ export default function sendMessage(commit) {
                 "type": "divider"
             } 
         ],
-        as_user: true,
+        as_user: true
     };
     
     fetch(url, {
@@ -23,6 +23,6 @@ export default function sendMessage(commit) {
         headers: { 
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
-         }
+        }
     });
 }
