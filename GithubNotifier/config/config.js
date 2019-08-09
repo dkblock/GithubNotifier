@@ -10,5 +10,5 @@ export const config = {
         token: nconf.get('slack:token'),
         channel: nconf.get('slack:channel')
     },
-    interval: 15000
+    interval: 10000
 }
