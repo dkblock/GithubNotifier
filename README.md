@@ -6,9 +6,9 @@ You need to create **config.json** file in **GithubNotifier/config** folder with
 **github:user** - user whose repositories will be checked  
 **github:repositories** - list of repositories to check latest commits  
 **slack:token** - token of the slack bot that will send notifications. Read the [documentation](https://api.slack.com/bot-users) to learn how to get it and configure your bot  
-**slack:channel** - slack сhannel where notifications will be sent  
-**vk:userID** - id of vk user to whom notifications will be sent
-**vk:groupID** - id of vk group/public that will send notifications
+**slack:channel** - slack сhannel where notifications will be sent    
+**vk:userID** - id of vk user to whom notifications will be sent  
+**vk:groupID** - id of vk group/public that will send notifications  
 **vk:token** - access token of the group that will send notifications. Read the [documentation](https://vk.com/dev/bots_docs) to learn how to get it
 
 For example:
