@@ -1,14 +1,15 @@
 import getLatestCommit from './github/githubClient';
 import {getLatestSavedCommit, saveLatestCommit} from './fileManager/fileManager';
-import sendMessage from './slack/slackClient';
+import {sendMessage as sendMessageToSlack} from './slack/slackClient';
+import {sendMessage as sendMessageToVK} from './vk/vkClient';
 
 export default async function checkLatestCommit(repository) {
     const commit = await getLatestCommit(repository);
 
     if(isLatestPushedCommitNew(commit, repository)) {           
-        sendMessage(commit, repository);
+        sendMessageToSlack(commit, repository);
+        sendMessageToVK(commit, repository);
         saveLatestCommit(commit, repository);
-        console.log(1);
     }
 }
 

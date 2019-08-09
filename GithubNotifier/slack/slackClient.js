@@ -1,7 +1,7 @@
 import {config} from '../config/config';
 import composeMessage from './messageBuilder';
 
-export default function sendMessage(commit, repository) {    
+export function sendMessage(commit, repository) {    
     const message = composeMessage(commit, repository); 
     const token = config.slack.token;
     const channel = config.slack.channel;

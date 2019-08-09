@@ -10,5 +10,10 @@ export const config = {
         token: nconf.get('slack:token'),
         channel: nconf.get('slack:channel')
     },
-    interval: 10000
+    vk: {
+        userID: nconf.get('vk:userID'),
+        groupID: nconf.get('vk:groupID'),
+        token: nconf.get('vk:token')
+    },
+    interval: 2000
 }

@@ -7,4 +7,3 @@ const interval = config.interval;
 repositories.forEach(repository => {
     setInterval(checkLatestCommit, interval, repository);
 });
-
