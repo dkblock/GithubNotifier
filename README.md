@@ -5,6 +5,8 @@ You need to create **config.json** file in **GithubNotifier/config** folder with
 
 **github:user** - user whose repositories will be checked  
 **github:repositories** - list of repositories to check latest commits  
+**github:clientID** - client ID of your OAuth App. Required to send more requests to github
+**github:clientSecret** - client secret of your OAuth App. Required to send more requests to github. Read the [documentation](https://developer.github.com/apps/building-oauth-apps/) to learn how to get it  
 **slack:token** - token of the slack bot that will send notifications. Read the [documentation](https://api.slack.com/bot-users) to learn how to get it and configure your bot  
 **slack:channel** - slack сhannel where notifications will be sent    
 **vk:userID** - id of vk user to whom notifications will be sent  
@@ -22,7 +24,9 @@ For example:
             "YarTransport",
             "TreesComparer",
             "Confirmit2019"
-        ]
+        ],
+        "clientID": "55cec4b38cf73eb82c4e",
+        "clientSecret": "0282438687638c2946f11498c56106f670542445"
     },
     "slack": {
         "token": "xoxb-699737002945-696024412450-6he11On1c3t8k3nRuqzwHfQXF8H4Xgx",
@@ -35,6 +39,7 @@ For example:
     }
 }
 ```
+
 
 
 
