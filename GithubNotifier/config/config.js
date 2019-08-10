@@ -4,7 +4,9 @@ nconf.env().argv().file('./config/config.json');
 export const config = {
     github: {
         user: nconf.get('github:user'),
-        repositories: nconf.get('github:repositories'),   
+        repositories: nconf.get('github:repositories'),  
+        clientID: nconf.get('github:clientID'),
+        clientSecret: nconf.get('github:clientSecret') 
     },
     slack: {
         token: nconf.get('slack:token'),
@@ -15,5 +17,5 @@ export const config = {
         groupID: nconf.get('vk:groupID'),
         token: nconf.get('vk:token')
     },
-    interval: 2000
+    interval: 5000
 }

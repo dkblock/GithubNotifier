@@ -1,10 +1,10 @@
 {
   "dkblock": {
     "GithubNotifier": {
-      "latestCommit": "bedd8517a9b01ce3c4b3fbfa533e62f9c7b63e50"
+      "latestCommit": "560aa45a3951ecbb47bc1f51ed10822378e800cc"
     },
     "Personal": {
-      "latestCommit": "835c55cbe4fa2949cc9e11502d239ad1f79b6ba2"
+      "latestCommit": "502920c8752ef25709fbbe5071babef30aeb81bd"
     },
     "TreesComparer": {
       "latestCommit": "779534aa56b03904256da70217b0146c58164b08"
@@ -13,7 +13,7 @@
       "latestCommit": "80ff2c6a6f4f8fb3aa95456f1b227201250e75ff"
     },
     "Confirmit2019": {
-      "latestCommit": "ef552128799368cdeacade22e2808dcae8ee8db7"
+      "latestCommit": "c812de34be104e41668a724cbd9043ea66fb1f47"
     }
   }
 }
