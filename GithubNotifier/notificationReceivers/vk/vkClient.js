@@ -1,8 +1,8 @@
-import {config} from '../config/config';
-import composeMessage from './messageBuilder';
+import {config} from '../../config/config';
+import buildMessage from './messageBuilder';
 
 export function sendMessage(commit, repository) {    
-    const message = composeMessage(commit, repository); 
+    const message = buildMessage(commit, repository); 
     const userID = config.vk.userID;
     const groupID = config.vk.groupID;
     const token = config.vk.token;

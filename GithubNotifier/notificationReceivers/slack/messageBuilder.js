@@ -1,9 +1,12 @@
-export default function composeMessage(commit, repository) {    
+export default function buildMessage(commit, repository) {  
+    const committer = commit.committer.login;
+    const text = commit.commit.message;
+    const url = commit.html_url;   
     const message = {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": `*New commit in repository ${repository}* :wink:\n>Committer: ${commit.committer.login}\n>Message: '${commit.commit.message}'\n`
+                    "text": `*New commit in repository ${repository}* :wink:\n>Committer: ${committer}\n>Message: '${text}'\n`
                 },
                 "accessory": {
                     "type": "button",
@@ -11,7 +14,7 @@ export default function composeMessage(commit, repository) {
                         "type": "plain_text",
                         "text": "GET IT",
                     },
-                    "url": `${commit.html_url}`,
+                    "url": `${url}`,
                     "style": "primary"
                 }
     }    

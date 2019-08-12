@@ -1,8 +1,8 @@
-import {config} from '../config/config';
-import composeMessage from './messageBuilder';
+import {config} from '../../config/config';
+import buildMessage from './messageBuilder';
 
 export function sendMessage(commit, repository) {    
-    const message = composeMessage(commit, repository); 
+    const message = buildMessage(commit, repository); 
     const token = config.slack.token;
     const channel = config.slack.channel;
     const url = `https://slack.com/api/chat.postMessage`;
