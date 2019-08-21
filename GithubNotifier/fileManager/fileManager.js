@@ -17,6 +17,12 @@ export function getLatestSavedCommit(repository) {
 }
 
 export function saveLatestCommit(commit, repository) {    
+    const data = getDataForSaving(commit, repository);
+    
+    fs.writeFileSync('./fileManager/latestCommits.json', data);
+}
+
+function getDataForSaving(commit, repository) {
     const user = config.github.user
     const latestCommit = commit.sha;
     const commits = JSON.parse(fs.readFileSync('./fileManager/latestCommits.json'));
@@ -30,5 +36,7 @@ export function saveLatestCommit(commit, repository) {
     }
 
     commits[user][repository]['latestCommit'] = latestCommit;    
-    fs.writeFileSync('./fileManager/latestCommits.json', JSON.stringify(commits, null, 2));
+    const data = JSON.stringify(commits, null, 2);
+
+    return data;
 }

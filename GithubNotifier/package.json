@@ -14,7 +14,6 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/register": "^7.5.5",
     "babel-polyfill": "^6.26.0",
-    "isomorphic-fetch": "^2.2.1",
-    "nconf": "^0.10.0"
+    "isomorphic-fetch": "^2.2.1"
   }
 }

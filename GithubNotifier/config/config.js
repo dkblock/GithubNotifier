@@ -1,21 +1,22 @@
-import nconf from 'nconf';
-nconf.env().argv().file('./config/config.json');
+import fs from 'fs';
+
+const settings = JSON.parse(fs.readFileSync('./config/config.json'));
 
 export const config = {
     github: {
-        user: nconf.get('github:user'),
-        repositories: nconf.get('github:repositories'),  
-        clientID: nconf.get('github:clientID'),
-        clientSecret: nconf.get('github:clientSecret') 
+        user: settings.github.user,
+        repositories: settings.github.repositories,  
+        clientID: settings.github.clientID,
+        clientSecret: settings.github.clientSecret 
     },
     slack: {
-        token: nconf.get('slack:token'),
-        channel: nconf.get('slack:channel')
+        token: settings.slack.token,
+        channel: settings.slack.channel
     },
     vk: {
-        userID: nconf.get('vk:userID'),
-        groupID: nconf.get('vk:groupID'),
-        token: nconf.get('vk:token')
+        userID: settings.vk.userID,
+        groupID: settings.vk.groupID,
+        token: settings.vk.token
     },
     interval: 5000
 }
