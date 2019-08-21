@@ -3,7 +3,7 @@ import fs from 'fs';
 
 export function getLatestSavedCommit(repository) {  
     const user = config.github.user;
-    const commits = JSON.parse(fs.readFileSync('./fileManager/latestCommits.json'));
+    const commits = getCommits();
     let latestCommit;
 
     if(!commits[user] || !commits[user][repository]) {
@@ -17,15 +17,22 @@ export function getLatestSavedCommit(repository) {
 }
 
 export function saveLatestCommit(commit, repository) {    
-    const data = getDataForSaving(commit, repository);
-    
+    const commits = processCommitsForSaving(commit, repository);
+    const data = JSON.stringify(commits, null, 2); 
+
     fs.writeFileSync('./fileManager/latestCommits.json', data);
 }
 
-function getDataForSaving(commit, repository) {
+function getCommits() {
+    const commits = JSON.parse(fs.readFileSync('./fileManager/latestCommits.json'));
+
+    return commits;
+}
+
+function processCommitsForSaving(commit, repository) {
     const user = config.github.user
     const latestCommit = commit.sha;
-    const commits = JSON.parse(fs.readFileSync('./fileManager/latestCommits.json'));
+    const commits = getCommits();
 
     if(!commits[user]) {
         commits[user] = {};
@@ -35,8 +42,7 @@ function getDataForSaving(commit, repository) {
         commits[user][repository] = {};
     }
 
-    commits[user][repository]['latestCommit'] = latestCommit;    
-    const data = JSON.stringify(commits, null, 2);
+    commits[user][repository]['latestCommit'] = latestCommit;        
 
-    return data;
+    return commits;
 }

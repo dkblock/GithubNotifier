@@ -1,6 +1,6 @@
 import {config} from './config/config';
 
-export default async function sendNotifications(commit, repository) {
+export default function sendNotifications(commit, repository) {
     const notificationReceivers = config.notificationReceivers;
 
     notificationReceivers.forEach(receiver => {
