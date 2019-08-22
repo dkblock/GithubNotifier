@@ -9,6 +9,8 @@ export default function sendNotifications(commit, repository) {
 }
 
 async function sendMessage(commit, repository, receiver) {
-    const client = await import(config[receiver].client);
+    const clientPath = config[receiver].client;
+    const client = await import(clientPath);
+    
     client.sendMessage(commit, repository);
 }

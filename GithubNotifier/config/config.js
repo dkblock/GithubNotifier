@@ -7,7 +7,7 @@ export const config = {
         user: settings.github.user,
         repositories: settings.github.repositories,  
         clientID: settings.github.clientID,
-        clientSecret: settings.github.clientSecret, 
+        clientSecret: settings.github.clientSecret
     },
     slack: {
         token: settings.slack.token,
