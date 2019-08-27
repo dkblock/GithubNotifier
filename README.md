@@ -11,7 +11,8 @@ You need to create **config.json** file in **GithubNotifier/config** folder with
 **slack:channel** - slack сhannel where notifications will be sent    
 **vk:userID** - id of vk user to whom notifications will be sent  
 **vk:groupID** - id of vk group/public that will send notifications  
-**vk:token** - access token of the group that will send notifications. Read the [documentation](https://vk.com/dev/bots_docs) to learn how to get it
+**vk:token** - access token of the group that will send notifications. Read the [documentation](https://vk.com/dev/bots_docs) to learn how to get it  
+**notificationReceivers** - list of apps for receiving messages. *Currently available: vk, slack, console*
 
 For example:
 ```json
@@ -36,7 +37,12 @@ For example:
         "userID": "217408987",
         "groupID": "184182874",
         "token": "a1cdf3d101160162e2a6d98fc20397n1c3t0k3nde428f20a267e80e70f4b1818aaa8800555e555713546ba562"
-    }
+    },
+    "notificationReceivers": [
+        "vk",
+        "slack",
+        "console"
+    ]
 }
 ```
 

@@ -20,6 +20,11 @@
         "userID": "217408987",
         "groupID": "184182874",
         "token": "a1cdf3d101160162e2a6d98fc20397n1c3t0k3nde428f20a267e80e70f4b1818aaa8800555e555713546ba562"
-    }
+    },
+    "notificationReceivers": [
+        "vk",
+        "slack",
+        "console"
+    ]
 }
 ```
